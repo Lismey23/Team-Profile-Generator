@@ -64,8 +64,108 @@ function addTeamMembers() {
 
     ])
 .then(function(data){
-    
+    switch (data.addMember){
+        case "Add an Engineer":
+        addEngineer();
+        break;
+        
+        case 'Add an Intern':
+            addIntern();
+            break;
+
+        case 'Display my Team':
+            finalizeTeam();
+            break;
+
+    }
 
 })
+}
+
+function addEngineer() {
+    inquirer.prompt([
+        {
+            type:'input', 
+            name: 'name',
+            message:'Please enter the Manager Name',    
+            
+        },
+        {
+            type:'input', 
+            name: 'id',
+            message:'Please enter the Manager Employee ID',    
+            
+        },
+        {
+            type:'input', 
+            name: 'email',
+            message:'Please enter the Manager email address',    
+            
+        },
+
+        {
+            type:'input', 
+            name: 'github',
+            message:'Please enter the your GitHub username ',    
+            
+        },
+        
+
+
+    ])
+    .then(function(data){
+        const name = data.name;
+        const id = data.id;
+        const email = data.email;
+        const github = data.github;
+        const teamMember = new Engineer(name, id, email, officeNumber)
+        completeTeam.push(teamMember);
+        addTeamMembers()
+
+    })
+}
+
+function addIntern () {
+    inquirer.prompt ([
+        {
+            type:'input', 
+            name: 'name',
+            message:'Please enter the Manager Name',    
+            
+        },
+        {
+            type:'input', 
+            name: 'id',
+            message:'Please enter the Manager Employee ID',    
+            
+        },
+        {
+            type:'input', 
+            name: 'email',
+            message:'Please enter the Manager email address',    
+            
+        },
+
+        {
+            type:'input', 
+            name: 'school',
+            message:'Please enter the name of your school',    
+            
+        },
+    ])
+    .then(function(data){
+        const name = data.name;
+        const id = data.id;
+        const email = data.email;
+        const school = data.school;
+        const teamMember = new Intern(name, id, email, school)
+        completeTeam.push(teamMember)
+        addTeamMembers();
+    })
+}
+
+function finalizeTeam () {
+    
+
 }
 

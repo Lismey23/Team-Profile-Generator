@@ -3,7 +3,9 @@
 This is a Node.js command-line application that generates a webpage containing a team's basic information based on an user input. 
 
 # Installation
+```bash
 node index.js
+```
 
 # Example of a team profile generated
 <img src="./assets/team-profile.png">

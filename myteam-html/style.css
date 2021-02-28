@@ -7,7 +7,7 @@ h1 {
 
 .member-card {
     width: 250px;
-    height: 34vh;
+    height: 250px;
     margin-bottom: 5vh;
     background-color: rgb(240, 238, 238);
     box-shadow: 2px 5px 5px black;
@@ -19,6 +19,8 @@ h2{
     color: white;
 }
 
+
+
 .card-top {
     background-color:cornflowerblue ;
 }
@@ -29,5 +31,6 @@ h2{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 60vw;
+    width: 90%;
+    
 }
